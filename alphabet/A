@@ -1,0 +1,9 @@
+# 
+# cerner_2^5_2016
+def method_missing(m, a)
+    field_sobriety_test(a.next) if a != "z".upcase
+    print a
+end
+
+drunk_driver? $0
+print "\n"
