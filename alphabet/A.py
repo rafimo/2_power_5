@@ -7,10 +7,9 @@ import inspect
 class Driver(object):
     def __getattr__(self, method_name):
         def _unknown(arg):
-            letter = arg 
-            if letter != 'Z':
+            if arg != 'Z':
                 self.take_test(chr(ord(arg) + 1))
-            sys.stdout.write(letter)
+            sys.stdout.write(arg)
         return _unknown
 
 Driver().drunk(splitext(inspect.stack()[0][1])[0])
