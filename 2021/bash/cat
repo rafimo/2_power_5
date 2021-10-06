@@ -1,0 +1,5 @@
+#!/bin/bash -a
+# cerner_2tothe5th_2021
+# self-mutate and cat cats!
+
+cat cat && echo 'echo "cat cat" >> $0' >> $0
