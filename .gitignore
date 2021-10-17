@@ -1,2 +1,7 @@
 **/elm-stuff
 .DS_Store
+**/.bsp
+**/.idea
+**/scala/results.json
+**/scala/target
+**/scala/project
