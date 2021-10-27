@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+## Save bit of typing cerner_2tothe5th_2021
+## Not the real login process change it internally as appropriate to use this script
+## connect.exp <host>
+set timeout 120
+spawn ssh [lindex $argv 0]
+
+## get password from user and store it a var
+stty -echo 
+send_user "Password: "
+expect_user -re "(.*)\n"
+send_user "\n"
+stty echo
+## store into a var
+set password $expect_out(0,string) 
+
+## loop forever - each time password is encountered send the stored password!
+while { 1 > 0 } {
+    interact -o "Password: " return
+    send "$password\r"
+}
