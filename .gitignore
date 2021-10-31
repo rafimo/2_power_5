@@ -7,3 +7,4 @@
 **/scala/project
 **/kotlin/target
 **/kotlin/*.iml
+**/node_modules
