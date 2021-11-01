@@ -5,6 +5,6 @@
 **/scala/results.json
 **/scala/target
 **/scala/project
-**/kotlin/target
+**/target
 **/kotlin/*.iml
 **/node_modules
