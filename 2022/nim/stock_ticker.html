@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <meta charset = "utf-8" />
+   <title>Stock Ticker</title>
+
+   <script language = "javascript" type = "text/javascript">
+      var wsUri = "ws://0.0.0.0:3000/stocks";
+      var output;
+	
+      function init() {
+         output = document.getElementById("output");
+         testWebSocket(output);
+      }
+	
+      function testWebSocket(output) {
+         websocket = new WebSocket(wsUri);
+			
+         websocket.onopen = function(evt) {
+            onOpen(evt, output)
+         };
+      }
+	
+      function onOpen(evt, output) {
+         console.log("CONNECTED");
+
+         websocket.send('ORCL');
+         websocket.onmessage = function(e) {
+            output.innerHTML = e.data
+         }
+      }
+	
+      window.addEventListener("load", init, false);
+   
+   </script>
+
+   <h2>Stock Ticker</h2>
+   <div id = "output"></div>
+
+</html>
