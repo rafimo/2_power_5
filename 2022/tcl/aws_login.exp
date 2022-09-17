@@ -2,7 +2,7 @@
 # cerner_2tothe5th_2022
 
 ## Save some typing using Expect, a Tcl DSL
-## aws.exp <number of the role you want to use>
+## aws_login.exp <number of the IAM role you want to use>
 
 proc do_login { role } {
     spawn /usr/local/bin/awscli_setup
