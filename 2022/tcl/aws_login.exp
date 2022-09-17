@@ -1,0 +1,39 @@
+#!/usr/bin/expect
+# cerner_2tothe5th_2022
+
+## Save some typing using Expect, a Tcl DSL
+## aws.exp <number of the role you want to use>
+
+proc do_login { role } {
+    spawn /usr/local/bin/awscli_setup
+    expect  {
+        "Select an option: " {
+            send "L\r"
+            expect { 
+                "Select profile/account: " {
+                    send "2\r"
+                    expect "Username: "
+                    set user [exec whoami]
+                    send "$user\r"
+                    expect "Password: "
+                    stty -echo
+                    expect_user -re "(.*)\n"
+                    send "$expect_out(1,string)\r"
+                    stty echo
+                    unset expect_out(1,string)
+                    expect "Authentification Choice: "
+                    send "1\r"
+                    expect -re ".* Number to assume role:.*"
+                    # make this better - search for the role to use instead of asking the user to enter the role number.
+                    send "$role\r"
+                }
+            }
+        }
+    }
+    interact
+}
+
+set timeout 120
+set role [lindex $argv 0]
+do_login $role
+
