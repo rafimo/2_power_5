@@ -1,0 +1,9 @@
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+name: webscraper
+
+dependencies:
+  web_scraper: ^0.1.4
+  sprintf: ^7.0.0
+  args: ^2.3.0
