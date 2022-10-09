@@ -11,3 +11,5 @@
 **/vendor/*
 **/.cpcache/*
 **/.dart_tool/*
+**/csharp/*/obj/*
+**/csharp/*/bin/*
