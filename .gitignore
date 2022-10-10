@@ -13,3 +13,5 @@
 **/.dart_tool/*
 **/csharp/*/obj/*
 **/csharp/*/bin/*
+**/fsharp/*/obj/*
+**/fsharp/*/bin/*
