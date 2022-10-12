@@ -15,3 +15,5 @@
 **/csharp/*/bin/*
 **/fsharp/*/obj/*
 **/fsharp/*/bin/*
+.Rproj.user
+.Renviron
