@@ -1,2 +1,3 @@
-# 2_power_5
-Cerner Engineering Impact
+# 2^5
+
+Repo containing code sample from different languages as part of an internal coding competition.
